@@ -1,0 +1,62 @@
+<body>
+    <h2>Angular Carousel</h2>
+    <div class="container-fluid">
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let image of images">
+          <div class="wrapper" >
+            <img [src]="image.imgUrl" alt="Image path is Unknown" />
+          </div>
+          <div class="carousel-caption">
+            <h3>{{ image.imgCapt }}</h3>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div><br>
+  
+    <!-- Added slide -->
+    <h4>Added slide</h4>
+    <div class="slide-num">
+      <div *ngFor="let item of images; let i = index">
+        <ul>
+          <li>
+            Slide - {{ i + 1 }} <button (click)="onDelete(i)" id="trash"><i class="fa fa-trash DeleteTrash" ></i></button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Form-->
+    <h4>Add new slide</h4>
+    <div class="container">
+      <form [formGroup]="imgForm" (ngSubmit)="onSubmit();imgForm.reset() ">
+        <div class="div1">
+<!-- <table>
+  <tr>
+    <td>
+      <label for="img-url">Image url</label>
+    </td>
+    <td>
+      <span class ="upload">[Upload Image size(900*500)]</span>
+    </td>
+  </tr>
+</table> -->
+          <label for="img-url">Image url</label>
+          <input type="text" id="img-url" formControlName="imgUrl" />
+          <div *ngIf="imgForm.get('imgUrl')?.invalid && imgForm.get('imgUrl')?.touched" class="warning">
+                Image Url is required
+          </div>
+        </div>
+      
+        <diV class="div1">
+          <label for="slide-caption">Slide caption</label>
+          <input type="text" id="slide-caption" formControlName="imgCapt" />
+          <div *ngIf="imgForm.get('imgCapt')?.invalid && imgForm.get('imgCapt')?.touched" class="warning">
+            Caption is required
+      </div>
+        </diV>
+        <div class="div-button">
+          <button [disabled]="imgForm.invalid" class="form-button" >Add slide</button>
+        </div>
+      </form>
+    </div>
+  

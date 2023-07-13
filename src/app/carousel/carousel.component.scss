@@ -1,0 +1,86 @@
+h2{
+    margin-left: 6rem;
+}
+h4{
+    margin-left: 2rem;
+}
+//Slider css
+#slider{
+    display: flex;
+    margin:5%;
+    img{
+        height: 20rem;
+        width:  20rem;
+        object-fit :inherit;
+    }
+}
+//slider container css
+.container-fluid {
+    width:50rem;
+    height:30rem
+  }
+//number of slide added css
+.slide-num{
+    display: flex;
+    margin-left: 6rem;
+    flex-direction: column;
+    width: 30rem;
+  
+}
+// #trash{
+//     background-color: red;
+//     border: none;
+// }
+#trash{
+
+    background-color: white;
+
+    border: none;
+
+}
+.upload{
+    color:red;
+}
+
+
+
+
+/* set red color for trash icon   */
+
+.DeleteTrash{
+
+    font-size:20px;color:red;
+
+}
+//Form css
+.warning{
+    color:red;
+}
+//Div container css
+.div1{
+//     height: 50px;
+//   width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 1rem 1rem 0rem;
+    input{
+        width:70%;
+        border: 1px solid grey;
+        border-radius: 5px;
+        padding: 5px;
+    }
+}
+//Button css
+.form-button {
+    color: white;
+    background-color: blue;
+    padding: 10px;
+    border-style:none;
+    border-radius: 5px;
+}
+
+  
+  
+  
+  
+  
